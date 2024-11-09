@@ -1,0 +1,18 @@
+:root {
+    --light-background: #b3bece;
+    --dark-background: #2a2e42;
+    --dark-contrast: #1f2234;
+    --danger-background: #e5aaaa;
+    --white: #ffffff;
+    --accent: #a588f3;
+    --danger: #d05454;
+    --theme-color: rgb(130, 230, 239);
+
+    --equals-button: #d78652;
+
+    --number-background: #3c3f64;
+    --dark-font-color: #1f1f1f;
+    --light-font-color: #dae1e1;
+    --light-font-history-color: #c7cdda;
+    --light-operation-color: #7181a4;
+}

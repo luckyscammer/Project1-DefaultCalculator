@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.loading-box-body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-box {
+    width: 64px;
+    height: 64px;
+    background-color: transparent;
+    border: 6px solid var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--white), inset 0 0 10px var(--white);
+
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    33% {
+        transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg);
+    }
+    67% {
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+}

@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* — — — — — WRAPPER — — — — — */
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--dark-background);
+}
+
+/* — — — — — NAV BAR — — — — — */
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 64px;
+    background-color: var(--dark-contrast);
+    box-shadow: 0 0 12px var(--dark-contrast);
+    padding: 16px 0;
+}
+
+nav div {
+    margin: 0 16px;
+}
+
+/* — — — — — LOGO (PLIFFDAX) — — — — — */
+
+.logo--container {
+    align-content: center;
+    text-align: center;
+}
+
+.author {
+    font-size: 2.3rem;
+    color: var(--light-font-color);
+    text-transform: uppercase;
+}
+
+.calculator--name {
+    font-size: 1.5rem;
+    color: var(--accent);
+    letter-spacing: 8px;
+}
+
+/* — — — — — LINKS — — — — — */
+
+.social--links  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social--links ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.svg--logo {
+    width: 48px;
+    height: 48px;
+    fill: var(--light-font-color);
+    transition: 200ms ease-in-out;
+}
+
+.svg--logo:hover {
+    fill: var(--accent);
+    scale: 105%;
+}
+
+/* — — — — — MAIN — — — — — */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    --child-height: 600px;
+}
+
+main .scroll--content {
+    width: 100%;
+    position: relative;
+}
+
+.calculator--container {
+    margin: 64px 0;
+    width: 100%;
+    min-height: 64vh;
+    background-color: var(--dark-background);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.calculator--object,
+.calculator--history {
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 12px var(--dark-contrast);
+    background-color: var(--dark-contrast);
+    min-width: 400px;
+    min-height: var(--child-height);
+    margin: 16px;
+}
+
+.calculator--object {
+    flex-grow: 1;
+}
+
+.calculator--history {
+    flex-grow: 2;
+}
+
+/* — — — — — CALCULATOR GUI — — — — — */
+
+.calculator--input {
+    position: relative;
+}
+
+.history--text {
+    position: absolute;
+    right: 0;
+    margin: 8px 16px;
+    display: flex;
+    width: 95%;
+    height: 56px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    word-spacing: 6px;
+    color: var(--number-background);
+    font-size: 20px;
+}
+
+.calculator--input input {
+    width: 96.5%;
+    background-color: transparent;
+    color: var(--light-font-color);
+    border: none;
+    padding: 72px 16px 16px 16px;
+    font-size: 2.6rem;
+    text-align: right;
+    overflow: hidden;
+}
+
+.calculator--input input::placeholder {
+    color: var(--number-background);
+}
+
+.calculator--input input:is(:focus, :valid) {
+    outline: none;
+}
+
+.calculator--buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.calculator--buttons button {
+    width: auto;
+    height: 64px;
+    border: none;
+    border-radius: 24px;
+    color: var(--light-font-color);
+    background-color: var(--dark-background);
+    font-size: 2rem;
+    transition: 100ms ease-in-out;
+}
+
+.calculator--buttons button:nth-last-child(2) {
+    grid-column: span 3;
+}
+
+.calculator--buttons .button--0,
+.calculator--buttons .button--1,
+.calculator--buttons .button--2,
+.calculator--buttons .button--3,
+.calculator--buttons .button--4,
+.calculator--buttons .button--5,
+.calculator--buttons .button--6,
+.calculator--buttons .button--7,
+.calculator--buttons .button--8,
+.calculator--buttons .button--9 {
+    background-color: var(--number-background);
+}
+
+.calculator--buttons .button--bin:is(:hover, :active) svg,
+.calculator--buttons .button--delete:is(:hover, :active) svg,
+.calculator--buttons .button--change:is(:hover, :active) svg {
+    fill: var(--dark-font-color);
+}
+
+.calculator--buttons .button--bin:active,
+.calculator--buttons .button--delete:active {
+    background-color: var(--danger);
+}
+
+.calculator--buttons button:is(:hover, :active) {
+    background-color: var(--light-font-color);
+    color: var(--dark-font-color);
+}
+
+.calculator--buttons button:active {
+    background-color: var(--accent);
+}
+
+.calculator--buttons .button--equals:active {
+    background-color: var(--equals-button);
+    color: var(--dark-font-color);
+}
+
+.calculator--buttons button svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--light-font-color);
+}
+
+/* — — — — — CALCULATOR HISTORY GUI — — — — — */
+
+.calculator--history {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-height: var(--child-height);
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.calculator--history ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.calculator--history ul li {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    transition: 100ms ease-in-out;
+}
+
+.calculator--history ul li:first-child:hover {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.calculator--history ul li:last-child:hover {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.calculator--history ul li:hover {
+    background-color: var(--dark-background);
+}
+
+.calculator--history ul li .history--number--container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 4px;
+}
+
+.calculator--history ul li .remove {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.calculator--history ul li .remove svg {
+    fill: var(--number-background);
+    transition: 200ms ease;
+}
+
+.calculator--history ul li .remove:hover svg {
+    fill: var(--danger);
+}
+
+.history--number--container p {
+    color: var(--light-operation-color);
+    word-spacing: 6px;
+}
+
+.history--number--container .result {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    width: 100%;
+    text-align: right;
+    font-size: 24px;
+    color: var(--light-font-history-color);
+}
+
+/* — — — — — SCROLLBAR — — — — — */
+
+::-webkit-scrollbar {
+    display: none;
+}
